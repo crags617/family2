@@ -10,33 +10,32 @@
 </head>
 <body>
 
-	<div id="header">
+<div id="header">
       <h1>American concern with Israel/Palestine</h1>
     </div>
   
     <div id="content">
       <!--img id="logo" src="img/illustration.png" alt="Work vs. Play"-->
         <table id="counter">
-        	<tr>
-        		<th class='first'>First Tweets</th>
-        		<th class='second'>Second Tweets</th>
-        	</tr>
-           	<tr>
-           	    <td class='first'>--</td>
-        		<td class='second'>--</td>
-        	</tr>
+         <tr>
+         <th class='first'>First Tweets</th>
+         <th class='second'>Second Tweets</th>
+         </tr>
+            <tr>
+            <td class='first'>--</td>
+         <td class='second'>--</td>
+         </tr>
         </table>
         <a href="#" id="stop">Pause</a>
         <div id="about">
             <h2>About this Site</h2>
-            <p>ya ya ya</p>
+            <p>Following live twitter feeds about the Middle Class and Poverty... </p>
         </div>
     </div>
 
     <div id="map" class="map"></div>
         
     <!-- External libraries and site script -->
-  	<script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
     <script src="ext/jquery.min.js"></script>
     <script src="ext/underscore.min.js"></script>
     <script src="ext/modestmaps.min.js"></script>
@@ -44,31 +43,43 @@
     <script src="ext/wax/wax.ext.js"></script>
     <script src="ext/easey.js"></script>
     <script src="ext/mmg.js"></script>
-  	<script src="ext/mmg_interaction.js"></script>
+    <script src="tweetRace.js"></script>
     <script src="script.js"></script>
     
     <!-- Site configuration -->
     <script type="text/javascript">
+    
+        // Specify the tweets and location / radius to search
+        var tweets = [
+            'israel', // First term
+            'palestine', // Second term
+           '39,-98,1500mi'
+          //US: '39,-98,1500mi'
+          //world: '22,-9,10000mi' --only considers "1000 distinct subregions"...?
+          //Europe: '48,11,1500mi' --multiple language problem
+          //Australia: '-26,134,1500mi'
+        ];
 
-      /*Map() takes 	element 'map', 
+        /* Map() takes 	element 'map', 
 						{api, center, zoomrange, features..}
-						callback function to start on load*/
+						callback function to start on load */
         var main = Map('map', {
-            // Specify the MapBox API url
             api: 'http://a.tiles.mapbox.com/v3/examples.map-dg7cqh4z.jsonp',
             center: {
-                lat: 39,        // Intial center point and zoom level.
-                lon: -98,       // To find coordinates and zoom levels, 
-                zoom: 4         // try: http://www.getlatlon.com
+                lat: 39, // Intial center point and zoom level.
+                lon: -98, // To find coordinates and zoom levels,
+                zoom: 4 // try: http://www.getlatlon.com
+              //US @ zoom: 4; world @ zoom: 2; Europe @ zoom: 5
+              //for world: 22, -9 @ zoom: 2
             },
-            zoomRange: [1, 8], // Limit zooming
-            features: [         // Map features
+            zoomRange: [1, 14], // Limit zooming on the map to these levels
+            features: [ // Map features (see readme.md)
                 'zoomwheel',
                 'zoombox',
                 'zoompan',
                 'share'
             ]
-			}, map.smooth());  //try this from mapbox.js as callback function
+        }, tweetRace.start); // Callback function to start when map is loaded
     </script>
 </body>
 </html>
