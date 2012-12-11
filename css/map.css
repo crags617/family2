@@ -54,11 +54,17 @@
  .wax-tooltip {
   position:absolute;
   z-index:999998;
-  right:10px;
   }
 
- .wax-legends { bottom:10px; }
- .wax-tooltip { top:10px; }
+ .wax-legends { 
+  left:10px;
+  bottom:10px; 
+  }
+
+ .wax-tooltip { 
+  left:100px;
+  top:10px; 
+  }
 
  .wax-legend,
  .wax-tooltip {
