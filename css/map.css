@@ -50,7 +50,9 @@
   }
 
 /* ### Tooltips, legends ### */
- .wax-legends,
+
+/*
+.wax-legends,
  .wax-tooltip {
   position:absolute;
   z-index:999998;
@@ -77,6 +79,7 @@
   }
 
  .wax-legend { position:relative; }
+*/
 
 /* ### Zoomer, close buttons, share ### */
  .close,
