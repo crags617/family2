@@ -1,7 +1,42 @@
+.ts-error {
+  margin:0px;
+  padding:0px;
+  color:#222;
+  font:normal 13px/20px Arial,sans-serif;
+  }
+
+ a,
+.ts-error a {
+  color:#489;
+  text-decoration:none;
+  }
+
+ small { font-size:11px; }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 { font-size:16px; }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ p { margin:0px 0px 10px; }
+
 /* ### General control styles ### */
- .map-share div,
- .map-share .twitter,
- .map-share .facebook {
+ .close,
+ .share,
+ .zoomer,
+ .wax-legend,
+ .wax-tooltip,
+ .wax-share div,
+ .wax-share .twitter,
+ .wax-share .facebook {
   display:block;
   position:absolute;
   border:1px solid #ccc;
@@ -14,26 +49,77 @@
   -webkit-box-shadow:rgba(0,0,0,0.1) 0px 1px 3px;
   }
 
-/* ### Zoomer, close buttons, share ### */
- .map-share .close {
-  position: absolute;
-  text-indent:-9999px;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAAAeCAYAAADO4udXAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHFSURBVHic7dpBbsIwEAXQoZpbwKKz8Bm66EFyjUicI1KuwUF6Ci/cBbmFJbqoLbluJezgMSn8JyGhJMRAvmZiw+5yuRBAay/3fgPwmBAsUIFggQoEC1QgWKACwQIVCBaoQLCgiIiMIjKWHo9gbVy4oJ/po9e42fPiUBERcemBxpiD935i5qO19ly6rzUR+SAics69a46zFc65WUSIKi9sA2MYN449O+fm0hcXVyzv/UREb977kzHmELeHUJ3Cvqn0fDfYhwfoi5WqKlREFRWLmY8hQPsQroGIKG4jooWZjzWDw3VJG4oXtnflWqU4WNbaszFmSMMVdsVQDdpt8NmkoYoVI2lPPY0iQjVVa1f774ak9cV2pBqqcE91rfUtre+57jGuiIxJgFa3oS0orljQxU03zGv8NeNzzr3eet6qipVVqyVs7toK43S7xYffmmwpoVulysPV4rstnhXmoWLmgZkH+g7YPp8twnOrXW74UZ2stecsXD2WG55F1Ur3Wtmss1mFrF1u+LUImswWp07LDcv1Q/6n3u1dc9ZZPSuExxErosa9HIIFKvAjNKhAsEAFggUqECxQgWCBCgQLVCBYoALBAhVfpi7sxwlEhWYAAAAASUVORK5CYII=);
-  background-repeat:no-repeat;
-  overflow:hidden;
-  background-position:-6px -6px;
-  top:4px;
-  right:4px;
-  width:18px;
-  height:18px;
+/* ### Tooltips, legends ### */
+ .wax-legends,
+ .wax-tooltip {
+  position:absolute;
+  z-index:999998;
+  right:10px;
   }
 
- .map-share .close:active {
+ .wax-legends { bottom:10px; }
+ .wax-tooltip { top:10px; }
+
+ .wax-legend,
+ .wax-tooltip {
+  padding:4px 9px;
+  min-width:180px;
+  max-width:280px;
+  max-height:400px;
+  overflow:auto;
+  width:220px\9; /* IE 8 and below */
+  }
+
+ .wax-legend { position:relative; }
+
+/* ### Zoomer, close buttons, share ### */
+ .close,
+ .zoomer {
+  text-indent:-9999px;
+  background-image:url(/assets/tilestream-pro/images/controls.png);
+  background-position:60px 60px;
+  background-repeat:no-repeat;
+  overflow:hidden;
+  }
+
+ .close:active,
+ .zoomer:active {
   border-color:#bbb;
   background-color:#ddd;
   box-shadow:inset rgba(0,0,0,0.1) 0px 1px 3px;
   -moz-box-shadow:inset rgba(0,0,0,0.1) 0px 1px 3px;
   -webkit-box-shadow:inset rgba(0,0,0,0.1) 0px 1px 3px;
+  }
+
+ .close {
+  top:4px;
+  right:4px;
+  width:18px;
+  height:18px;
+  background-position:-6px -6px;
+  }
+
+ .zoomer {
+  width:28px;
+  height:28px;
+  top:10px;
+  left:10px;
+  z-index: 2;
+  }
+
+ .zoomin {
+  background-position:-31px -1px;
+  left:39px;
+  border-radius:0px 3px 3px 0px;
+  -moz-border-radius:0px 3px 3px 0px;
+  -webkit-border-radius:0px 3px 3px 0px;
+  }
+
+ .zoomout {
+  background-position:-61px -1px;
+  border-radius:3px 0px 0px 3px;
+  -moz-border-radius:3px 0px 0px 3px;
+  -webkit-border-radius:3px 0px 0px 3px;
   }
 
  .share {
@@ -49,16 +135,43 @@
   background:rgba(32,32,32,0.75);
   border-color:#666;
   border-color:rgba(128,128,128,0.75);
-  border-radius: 3px;
   color:#fff;
-  position: absolute;
-  left: 11px;
-  top: 45px;
   }
 
+.zoompan .share { top:45px; }
+
+/* ### Zoombox ### */
+ .zoombox-box,
+ .boxselector-box {
+  border:1px dashed #888;
+  background:rgba(255,255,255,0.25);
+  position:absolute;
+  top:0px; left:0px; width:0px; height:0px;
+  display:none;
+  z-index: 10;
+  }
+
+/* ### Attribution ### */
+ .wax-attribution {
+  position:absolute;
+  background:#fff;
+  font:normal 10px/20px Arial,sans-serif;
+  z-index:99999;
+  text-align:center;
+  padding:0px 5px;
+  bottom:0px;
+  left:0px;
+  }
+
+ .wax-attribution.wax-g {
+  left:65px;
+  bottom:4px;
+  background:transparent;
+  }
 
 /* ### Share ### */
- .map-share {
+.ts-error,
+ .wax-share {
   background:#666;
   background:rgba(32,32,32,0.75);
   position:absolute;
@@ -68,7 +181,7 @@
   z-index:999999;
   }
 
- .map-share div {
+ .wax-share div {
   right:50%;
   top:50%;
   margin:-120px -180px 0px 0px;
@@ -78,9 +191,9 @@
   overflow:hidden;
   }
 
- .map-share small { color:#999; }
+ .wax-share small { color:#999; }
 
- .map-share textarea {
+ .wax-share textarea {
   display:block;
   font:normal 10px/15px Arial,sans-serif;
   resize:none;
@@ -89,8 +202,8 @@
   width:310px;
   }
 
- .map-share .twitter,
- .map-share .facebook {
+ .wax-share .twitter,
+ .wax-share .facebook {
   display:inline-block;
   position:relative;
   padding:2px 18px;
@@ -101,12 +214,72 @@
   border:2px solid #ccc;
   }
 
- .map-share .twitter {
+ .wax-share .twitter {
   background:#0ac;
   border-color:#4ce;
   }
 
- .map-share .facebook {
+ .wax-share .facebook {
   background:#359;
   border-color:#68c;
   }
+
+/* ### Google maps adjustments ### */
+.g .share {
+  position:absolute;
+  left:5px;
+  top:5px;
+  z-index:1000;
+  }
+
+.g.zoompan .share { left:30px; top:15px; }
+
+/* ### Error message ### */
+.ts-error .error-message {
+  background:#fff;
+  position:absolute;
+  right:50%;
+  top:50%;
+  margin:-50px -110px 0px 0px;
+  padding:10px 0px;
+  height:80px;
+  width:220px;
+  color:#999;
+  text-align:center;
+  font-weight:bold;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  box-shadow:#fff 0px 0px 40px;
+  -moz-box-shadow:#fff 0px 0px 40px;
+  -webkit-box-shadow:#fff 0px 0px 40px;
+  }
+
+.ts-error .mapbox-logo {
+  display:block;
+  width:140px;
+  height:40px;
+  margin:5px auto;
+  background:url(/assets/tilestream-pro/images/controls.png) 0px -40px no-repeat;
+  }
+
+ .mapbox-watermark {
+  position:absolute;
+  left:5px;
+  bottom:5px;
+  z-index:99999;
+  display:block;
+  width:65px;
+  height:20px;
+  text-indent:-9999px;
+  overflow:hidden;
+  background:url(/assets/tilestream-pro/images/controls.png) 0px -90px no-repeat;
+  }
+
+.attribution .mapbox-watermark { bottom:25px; }
+
+/* Override image location */
+ .zoomer,
+ .close,
+ .mapbox-watermark,
+.ts-error .mapbox-logo { background-image:url(../img/map.png); }
