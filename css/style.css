@@ -51,24 +51,34 @@ table {
 
 body,
 input,
-textarea {
+textarea { /*STYLE*/
     font: 16px/24px 'DroidSerifRegular', sans-serif;
-    color: #333;
+    color: #333; 
     -webkit-font-smoothing: antialiased;
     }
 
 pre,
 code { font:normal 12px/20px monospace; }
     
-h1, h2 {
+h1, h2, h3, h4, h5, h6 { /*STYLE*/
     font: .75em/1em 'DroidSansBold', sans-serif;
     text-transform: uppercase;
     }
 
-a {
-    color:#369;
+a { /*STYLE*/
+    color:#369; 
     text-decoration:none;
     }
+
+/*e.g. override:*/
+#about h1 { /*STYLE*/
+  line-height: 1.75em;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  padding: 5px 0 5px 5px;
+  margin-left:55px;
+}
+
 
 /* Layout */
 
@@ -85,15 +95,52 @@ body > div {
     position: relative;
     z-index: 1;
     }
-    
+
+/*specific to timeline feature (STYLE)*/
+#sidebar {
+  position:absolute;
+  top:0px;
+  left:0px;
+  background:#fff;
+  z-index:999;
+  overflow:auto;
+  opacity:0.6;
+  }
+#sidebar:hover { opacity:1; }
+#timeline {
+  padding:10px;
+  }
+#timeline a {
+  font-size:10px;
+  text-decoration:none;
+  }
+#timeline #controls {
+  position:absolute;
+  top:15px;
+  right:15px;
+  }
+#timeline #controls a {
+  font-size:20px;
+  color:#DC1438;
+  margin-left:10px;
+  }
+a.year-active {
+  color:#DC1438;
+  }
+
 .map {
     position: absolute;
+    z-index: 0;
     height: 100%;
     width: 100%;
-    z-index: 0;
+    /*from wpt:
+    top:0;
+  	right:0;
+  	bottom:0;
+  	left:0;*/
     }
 
-#header {
+#header { /*STYLE (not included in wpt)*/
     position: absolute;
     top: 0px;
     right: 0px;
@@ -105,18 +152,19 @@ body > div {
 
 #content {
 	position: absolute;
-	top: 50px;
+	top: 50px; /*0px in wpt*/
 	right: 0px;
 	bottom: 0px;
-	padding: 0 20px;
+	padding: 0 20px; /*20px in wpt*/
 	width: 279px;
     background: rgb(255,255,255); /* old IE */
     background: rgba(255,255,255,.9);
     border-left: 1px solid #ccc;
-    overflow-x: auto;
-    z-index: 2;
+    overflow-x: auto; /*hidden; overflow-y: auto; in wpt*/
+    z-index: 2; /*not included in wpt*/
     }
 
+/* IMG STYLES from ltt:
 #content img {
 	display: block;
     margin: 0px auto;
@@ -126,13 +174,8 @@ body > div {
     vertical-align: top;
     border-bottom: 1px solid #ccc;
     }
-
-#counter {
-    margin: 20px auto 0 auto;
-    width: 100%;
-    border: 1px solid #ccc;
-    }
-
+    
+TABLE STYLES from ltt: mayneed
 th {
     padding: 10px 0;
     width: 50%;
@@ -155,31 +198,37 @@ td {
 td.first { color: #d97e51;}
 td.second { color: #5dbfe1;}
 
-#stop {
-	display: block;
-	padding: 10px 0;
-	margin-bottom: 20px;
-	border: 1px solid #ccc;
-	border-top: 0;
-	background: #f2f2f2 url(../img/pause-play.png) 10px 10px no-repeat;
-	font: .75em/1em 'DroidSansBold', Georgia, serif;
-	color: #888;
-	text-indent: 30px;
-	text-transform: uppercase;
-	}
-	#stop:hover { background-color: #e3e3e3;}
+SECTION STYLES FROM WPT: mayneed
+.section {
+  width: 249px;
+  margin-bottom: 20px;
+  background: #ececec;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 15px;
+}
 
-#stop.start {
-	background-image:url(../img/pause-play.png);
-	background-position: 10px -40px;
-	background-repeat: no-repeat;
-	}
+LAYERS STYLES FROM WPT: mayneed
+.layers a {
+  display:block;
+  padding:5px;
+  margin:5px 0;
+  background:#eee;
+  max-width:300px;
+}
+.layers a:hover, .layers a:focus, .layers a.active {
+  background:#369;
+  color:white;
+}
+*/
 
-#about {
+label { font-weight:700;}
+
+#about { /*STYLE*/
     border-top: 1px solid #ccc;
     }
 
-/* Map */   
+/* Map: zoomer, wax, mmg.. */   
 
 a.zoomer {
 	position: absolute;
@@ -188,12 +237,12 @@ a.zoomer {
     
 .wax-tooltip {
     left: auto;
-    top: 10px;
-    right: 10px;
+    top: 10px; /*wpt: 330px*/
+    right: 10px; /*wpt: 60px*/
     }
 .wax-legends {
     left: auto;
-    right: 10px;
+    right: 10px; /*wpt: 330px*/
     width: 290px;
     }
 .wax-share h3 {
@@ -210,6 +259,25 @@ a.zoomer {
     display: block;
     margin-top: 0.5em;
     }
+
+/* INTIP? styles from wpt: (after wax-tooltip)
+.wax-intip {
+  border: 1px solid #CCC !important;
+  color: #444 !important;
+  padding: 15px !important;
+  margin-bottom: 5px;
+  }
+  .wax-intip::before { 
+    border-width: 17px !important;
+    margin-left: -17px !important;
+    }
+
+.wax-intip h1 {
+  font-size: 100% !important;
+	font-weight: bold !important;
+	margin-bottom: 10px !important;
+  }
+*/ 
 .share {
     top: 45px;
     z-index: 1000;
@@ -222,6 +290,8 @@ a.zoomer {
     left: -10px;
     top: -30px;
     }
+
+/*.MMG STYLES FROM ltt: 
 .mmg {
     width: 15px;
     height: 15px;
@@ -231,9 +301,6 @@ a.zoomer {
     position: relative;
     cursor: pointer;
     }
-.mmg-first { background: url(../img/work.png) no-repeat left bottom; }
-.mmg-second { background: url(../img/play.png) no-repeat left bottom; }
-
 .mmg .overlay {
     width: 190px;
     font-size: 12px;
@@ -288,6 +355,85 @@ a.zoomer {
 .mmg-first .overlay { background: #d97e51; }
 .mmg-second .arrow-down { background: rgba(93,191,225,1); }
 .mmg-second .overlay { background: #5dbfe1; }
+*/
+
+/* Modes */ /*STYLE/remove stuff i don't want or that conflicts with timeline!*/
+
+/* Left */
+.left #header .limiter {
+  width:480px;
+}
+.left #content {
+  left:0;
+  right:auto;
+  border-left:none;
+  border-right:1px solid #ccc;
+}
+.left .wax-attribution {
+  left:320px;
+}
+.left a.zoomin {
+  left:359px;
+}
+.left a.zoomout {
+  left:330px;
+}
+.left .share {
+  left:330px;
+  z-index:2;
+}
+.left .wax-tooltip {
+  right:10px;
+}
+.left .wax-legends {
+  right:10px;
+}
+
+/* Hero */
+
+.hero .map {
+  top:50px;
+  bottom:auto;
+  height:400px;
+}
+.hero #content {
+  top:450px;
+  left:0;
+  right:0;
+  bottom:auto;
+  border-left:none;
+  border-right:none;
+  border-top:1px solid #ccc;
+  width:auto;
+}
+.hero #content .limiter {
+  width:920px;
+  margin:0px auto;
+  position:relative;
+}
+.hero a.zoomer {
+  top:10px;
+}
+.hero .wax-tooltip {
+  top:10px;
+  right:10px;
+}
+.hero .wax-legends {
+  right:10px;
+}
+.hero .share {
+  top:45px;
+}
+
+.hero .layers {
+  height:36px;
+}
+.hero .layer {
+  width:200px;
+  float:left;
+  margin-right:20px;
+  text-align:center;
+}
 
 /* embed */
 
@@ -333,9 +479,20 @@ a.zoomer {
     text-align: center;
     border: 1px solid #ccc;
     }
+/* EMBED SHARING STYLE from ltt: mayneed
 .embed.sharing .layers {
     visibility: hidden;
     }
+
+LAYOUT STYLE from wpt:
+#layout {
+  z-index:10;
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+#layout a { margin-left:10px; }
+*/
 
 /* Animation */
 
