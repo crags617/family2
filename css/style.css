@@ -224,7 +224,7 @@ LAYERS STYLES FROM WPT: mayneed
 
 label { font-weight:700;}
 
-#about { /*STYLE*/
+#about { 
     border-top: 1px solid #ccc;
     }
 
@@ -357,84 +357,6 @@ a.zoomer {
 .mmg-second .overlay { background: #5dbfe1; }
 */
 
-/* Modes */ /*STYLE/remove stuff i don't want or that conflicts with timeline!*/
-
-/* Left */
-.left #header .limiter {
-  width:480px;
-}
-.left #content {
-  left:0;
-  right:auto;
-  border-left:none;
-  border-right:1px solid #ccc;
-}
-.left .wax-attribution {
-  left:320px;
-}
-.left a.zoomin {
-  left:359px;
-}
-.left a.zoomout {
-  left:330px;
-}
-.left .share {
-  left:330px;
-  z-index:2;
-}
-.left .wax-tooltip {
-  right:10px;
-}
-.left .wax-legends {
-  right:10px;
-}
-
-/* Hero */
-
-.hero .map {
-  top:50px;
-  bottom:auto;
-  height:400px;
-}
-.hero #content {
-  top:450px;
-  left:0;
-  right:0;
-  bottom:auto;
-  border-left:none;
-  border-right:none;
-  border-top:1px solid #ccc;
-  width:auto;
-}
-.hero #content .limiter {
-  width:920px;
-  margin:0px auto;
-  position:relative;
-}
-.hero a.zoomer {
-  top:10px;
-}
-.hero .wax-tooltip {
-  top:10px;
-  right:10px;
-}
-.hero .wax-legends {
-  right:10px;
-}
-.hero .share {
-  top:45px;
-}
-
-.hero .layers {
-  height:36px;
-}
-.hero .layer {
-  width:200px;
-  float:left;
-  margin-right:20px;
-  text-align:center;
-}
-
 /* embed */
 
 .embed .map {
@@ -479,20 +401,11 @@ a.zoomer {
     text-align: center;
     border: 1px solid #ccc;
     }
+
 /* EMBED SHARING STYLE from ltt: mayneed
 .embed.sharing .layers {
     visibility: hidden;
     }
-
-LAYOUT STYLE from wpt:
-#layout {
-  z-index:10;
-  position:absolute;
-  top:10px;
-  right:10px;
-}
-#layout a { margin-left:10px; }
-*/
 
 /* Animation */
 
