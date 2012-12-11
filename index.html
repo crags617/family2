@@ -2,69 +2,71 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Geographic Evolution of my Family</title>
-    <link rel="stylesheet" href="http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.css" type="text/css" />
+  <title>American concern with Israel/Palestine</title>
     <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="css/map.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="css/mapbox.share.css" type="text/css" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-
-    <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.uncompressed.js'></script>
-    <script src="ext/jquery.min.js"></script>
-    <script src="ext/underscore.min.js"></script>
-    <script src="ext/mapbox.share.js"></script>
 </head>
 <body>
 
 	<div id="header">
-        <h1>Geographic Evolution of my Family</h1>
+      <h1>American concern with Israel/Palestine</h1>
     </div>
+  
     <div id="content">
+      <!--img id="logo" src="img/illustration.png" alt="Work vs. Play"-->
+        <table id="counter">
+        	<tr>
+        		<th class='first'>First Tweets</th>
+        		<th class='second'>Second Tweets</th>
+        	</tr>
+           	<tr>
+           	    <td class='first'>--</td>
+        		<td class='second'>--</td>
+        	</tr>
+        </table>
+        <a href="#" id="stop">Pause</a>
         <div id="about">
             <h2>About this Site</h2>
-            <p>Ya ya ya. </p>
+            <p>ya ya ya</p>
         </div>
     </div>
 
     <div id="map" class="map"></div>
         
+    <!-- External libraries and site script -->
+    <script src="ext/jquery.min.js"></script>
+    <script src="ext/underscore.min.js"></script>
+    <script src="ext/modestmaps.min.js"></script>
+    <script src="ext/wax/wax.mm.js"></script>
+    <script src="ext/wax/wax.ext.js"></script>
+    <script src="ext/easey.js"></script>
+    <script src="ext/mmg.js"></script>
+    <script src="script.js"></script>
     
     <!-- Site configuration -->
     <script type="text/javascript">
 
+        // Make a new map in the #map element
         var main = Map('map', {
-      api: 'http://a.tiles.mapbox.com/v3/crags617.craginfam.jsonp',
-      center: {
-        lat: 80,
-        lon: -100,
-        zoom: 2         
-      },
-      zoomRange: [1, 8], 
-      features: [
-        'zoomwheel', 
-        'zoompan', //displays zoom controls
-        'legend', 
-        'share', 
-        //'layerHash', --adds bookmarkable suffix to url that saves layer selections... didn't think was necessary
-        'tooltips', //added this feature for interaction
-        'bwdetect', //decreases quality of map image based on auto detect of low bandwidth connections.. i like this feature so i added it
-      ]
-    }, function(tilejson) {
+            // Specify the MapBox API url
+            api: 'http://a.tiles.mapbox.com/v3/examples.map-dg7cqh4z.jsonp',
+            center: {
+                lat: 39,        // Intial center point and zoom level.
+                lon: -98,       // To find coordinates and zoom levels, 
+                zoom: 4         // try: http://www.getlatlon.com
+            },
+            zoomRange: [1, 8], // Limit zooming
+            features: [         // Map features
+                'zoomwheel',
+                'zoombox',
+                'zoompan',
+                'share'
+            ]
+        }, function(tilejson) { // Callback function
         $('p.description').text(tilejson.description);
-    });
-        
-      /*mapbox.auto('map', function(map, tiledata) {
-            map.centerzoom({
-                lat: 40,
-                lon: -80
-            }, 4);
-
-map.setZoomRange(2, 15);*/
-
-            // Add share control
-            mapbox.share().map(map).add();
-});
-        
+    });  
     </script>
 </body>
 </html>
