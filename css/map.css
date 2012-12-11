@@ -75,7 +75,7 @@
   max-width:280px;
   max-height:400px;
   overflow:auto;
-  width:220px\9; /* IE 8 and below */
+  width:220px\9;
   }
 
  .wax-legend { position:relative; }
