@@ -33,11 +33,12 @@
     <script src="ext/mmg.js"></script>
     <script src="tweetRace.js"></script>
     <script src="script.js"></script>
+  	<script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'></script>
     
     <!-- Site configuration -->
     <script type="text/javascript">
     
-        // Specify the tweets and location / radius to search
+        /* Specify the tweets and location / radius to search
         var tweets = [
             'israel', // First term
             'palestine', // Second term
@@ -46,7 +47,7 @@
           //world: '22,-9,10000mi' --only considers "1000 distinct subregions"...?
           //Europe: '48,11,1500mi' --multiple language problem
           //Australia: '-26,134,1500mi'
-        ];
+];*/
 
         /* Map() takes 	element 'map', 
 						{api, center, zoomrange, features..}
@@ -67,7 +68,7 @@
                 'zoompan',
                 'share'
             ]
-        }, tweetRace.start); // Callback function to start when map is loaded
+        }, map.interaction.auto()); // Callback function to start when map is loaded
     </script>
 </body>
 </html>
