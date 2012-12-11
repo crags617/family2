@@ -36,27 +36,29 @@
     
     <!-- Site configuration -->
     <script type="text/javascript">
-
-        /* Map() takes 	element 'map', 
+      /* Map() takes 	element 'map', 
 						{api, center, zoomrange, features..}
 						callback function to start on load */
-        var main = Map('map', {
-            api: 'http://a.tiles.mapbox.com/v3/crags617.craginfam.jsonp',
-            center: {
-                lat: 40, // Intial center point and zoom level.
-                lon: 25, // To find coordinates and zoom levels,
-                zoom: 2 // try: http://www.getlatlon.com
-            },
-            zoomRange: [1, 8], // Limit zooming on the map to these levels
-            features: [ // Map features (see readme.md)
-                'zoomwheel',
-                'zoombox',
-                'zoompan',
-                'share'
-            ]
-        }, function(tilejson) {
+      var main = Map('map', {
+        api: 'http://a.tiles.mapbox.com/v3/crags617.craginfam.jsonp',
+        center: {
+          lat: 40, // Intial center point and zoom level.
+          lon: 25, // To find coordinates and zoom levels,
+          zoom: 2 // try: http://www.getlatlon.com
+        },
+        zoomRange: [1, 8], // Limit zooming on the map to these levels
+        features: [ // Map features (see readme.md)
+          'zoomwheel',
+          'zoombox',
+          'zoompan',
+          'legend',
+          'tooltips',
+          'bwdetect',
+          'share'
+        ]
+      }, function(tilejson) {
         $('p.description').text(tilejson.description);
-    	});
-    </script>
+      });
+  </script>
 </body>
 </html>
