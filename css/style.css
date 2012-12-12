@@ -201,8 +201,8 @@ LAYERS STYLES FROM WPT: mayneed
   top: 0px;
   left:0px;
   right:0px;
-  width:auto;
-  height: 500px;	
+  width:100%;
+  height: 50px;	
   background: #444;
   color: white;
 }
