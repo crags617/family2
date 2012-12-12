@@ -238,11 +238,11 @@ a.zoomer {
 .wax-tooltip {
     left: 100px;
     top: 10px; /*wpt: 330px*/
-    right: auto; /*unsure || wpt: 60px*/
+    /*right: auto; /*unsure || wpt: 60px*/
     }
 .wax-legends { /*STYLE: make smaller, fonts included..*/
     left: 10px;
-    right: auto; /*wpt: 330px*/
+    /*right: auto; /*wpt: 330px*/
     width: 290px;
     }
 .wax-share h3 {
