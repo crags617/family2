@@ -13,14 +13,15 @@
   <div id="header">
     <h1>Geographic Evolution of my family</h1>
   </div>
-  
   <div id="content">
+    <div id='timeline'>
+      <div id='controls'></div>
+    </div>
     <div id="about">
       <h2>About this Site</h2>
             <p>Ya ya ya </p>
     </div>
   </div>
-
   <div id="map" class="map"></div>
         
   <!-- External libraries and site script -->
@@ -33,9 +34,14 @@
   <script src="ext/mmg.js"></script>
   <script src="ext/mmg_interaction.js"></script>
   <script src="script.js"></script>
+  <script src="markers.js"></script>
     
     <!-- Site configuration -->
     <script type="text/javascript">
+      
+      var timeline = document.getElementById('timeline'),
+      	  controls = document.getElementById('controls');
+      
       /* Map() takes 	element 'map', 
 						{api, center, zoomrange, features..}
 						callback function to start on load */
@@ -56,9 +62,10 @@
           'bwdetect',
           'share'
         ]
-      }, function(tilejson) {
+      }, map.addLayer(markerLayer));
+         /*alternative callback: function(tilejson) {
         $('p.description').text(tilejson.description);
-      });
+		}*/
   </script>
 </body>
 </html>
