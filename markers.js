@@ -2,7 +2,7 @@ markerLayer = mapbox.markers.layer()
 // this is a quick optimization - otherwise all markers are briefly displayed
 // before filtering to 2001
 	.filter(function() { return false })
-.url('https://docs.google.com/open?id=0B4nlwc2QbtjtMS01YWYwNGYyOC03ZmY0LTQ2YzMtODJmYS0zMDIzZDEwYjFlY2U', function(err, features) {
+	.url('https://docs.google.com/open?id=0B4nlwc2QbtjtMS01YWYwNGYyOC03ZmY0LTQ2YzMtODJmYS0zMDIzZDEwYjFlY2U', function(err, features) {
 /* if that url doesn't work:
 mapbox.converters.googledocs('0B4nlwc2QbtjtMS01YWYwNGYyOC03ZmY0LTQ2YzMtODJmYS0zMDIzZDEwYjFlY2U', 'od6', function(features) {
 */
