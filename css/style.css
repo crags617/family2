@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 { /*STYLE*/
     text-transform: uppercase;
     }
 
-a { /*STYLE*/
+a { 
     color:#369; 
     text-decoration:none;
     }
@@ -164,18 +164,9 @@ a.year-active {
     z-index: 2; /*not included in wpt*/
     }
 
-/* IMG STYLES from ltt:
-#content img {
-	display: block;
-    margin: 0px auto;
-    padding: 20px 0;
-    width: 100%;
-    max-width: 280px;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-    }
+
     
-TABLE STYLES from ltt: mayneed
+/*TABLE STYLES from ltt: mayneed
 th {
     padding: 10px 0;
     width: 50%;
@@ -184,10 +175,6 @@ th {
     text-transform: uppercase;
 	border-bottom: 1px solid #ccc;
     }
-
-th.first, td.first {
-	border-right: 1px solid #ccc;
-    }
     
 td { 
     font: 4em/1em 'DroidSerifBold', Georgia, serif;
@@ -195,8 +182,6 @@ td {
     padding: 20px 0;
     }
 
-td.first { color: #d97e51;}
-td.second { color: #5dbfe1;}
 
 SECTION STYLES FROM WPT: mayneed
 .section {
@@ -226,15 +211,41 @@ label { font-weight:700;}
 
 #about { 
     border-top: 1px solid #ccc;
-    }
+}
+
+/*Mode: Heroine */
+
+.heroine header {
+  position: absolute;
+  top: 0px;
+  left:0;
+  right:0;
+  height: 50px;	
+  background: #444;
+  color: white;
+}
+.heroine .map {
+  top:50px;
+  bottom:auto;
+  height:400px;
+}
+.heroine #content {
+  top:450px;
+  left:0;
+  right:0;
+  bottom:auto;
+  border-left:none;
+  border-right:none;
+  border-top:1px solid #ccc;
+  width:auto;
+}
 
 /* Map: zoomer, wax, mmg.. */   
 
 a.zoomer {
-	position: absolute;
-    top: 10px;
-    }
-    
+  position: absolute;
+  top: 10px;
+}  
 .wax-tooltip {
     left: 100px;
     top: 10px; /*wpt: 330px*/
@@ -259,25 +270,6 @@ a.zoomer {
     display: block;
     margin-top: 0.5em;
     }
-
-/* INTIP? styles from wpt: (after wax-tooltip)
-.wax-intip {
-  border: 1px solid #CCC !important;
-  color: #444 !important;
-  padding: 15px !important;
-  margin-bottom: 5px;
-  }
-  .wax-intip::before { 
-    border-width: 17px !important;
-    margin-left: -17px !important;
-    }
-
-.wax-intip h1 {
-  font-size: 100% !important;
-	font-weight: bold !important;
-	margin-bottom: 10px !important;
-  }
-*/ 
 .share {
     top: 45px;
     z-index: 1000;
@@ -405,7 +397,7 @@ a.zoomer {
 /* EMBED SHARING STYLE from ltt: mayneed
 .embed.sharing .layers {
     visibility: hidden;
-    }
+}
 
 /* Animation */
 
