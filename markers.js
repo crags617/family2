@@ -70,5 +70,3 @@ mapbox.converters.googledocs('0B4nlwc2QbtjtMS01YWYwNGYyOC03ZmY0LTQ2YzMtODJmYS0zM
 
     click_year(2012)();
 });
-
-map.addLayer(markerLayer);
