@@ -27,7 +27,7 @@ mapbox.converters.googledocs('0B4nlwc2QbtjtMS01YWYwNGYyOC03ZmY0LTQ2YzMtODJmYS0zM
         year_links = [];
 
     for (var i = 0; i < features.length; i++) {
-        years[features[i].properties.year] = true;
+        years[features[i].properties.start_year] = true;
     }
 
     for (var y in years) yearlist.push(y);
@@ -68,7 +68,7 @@ mapbox.converters.googledocs('0B4nlwc2QbtjtMS01YWYwNGYyOC03ZmY0LTQ2YzMtODJmYS0zM
         window.clearInterval(playStep);
     };
 
-    click_year(2001)();
+    click_year(2012)();
 });
 
 map.addLayer(markerLayer);
