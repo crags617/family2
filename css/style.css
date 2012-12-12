@@ -140,7 +140,7 @@ a.year-active {
   	left:0;*/
     }
 
-#header { /*STYLE (not included in wpt)*/
+#header {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -152,16 +152,16 @@ a.year-active {
 
 #content {
 	position: absolute;
-	top: 50px; /*0px in wpt*/
+	top: 50px; 
 	right: 0px;
 	bottom: 0px;
-	padding: 0 20px; /*20px in wpt*/
+	padding: 0 20px; 
 	width: 279px;
     background: rgb(255,255,255); /* old IE */
     background: rgba(255,255,255,.9);
     border-left: 1px solid #ccc;
-    overflow-x: auto; /*hidden; overflow-y: auto; in wpt*/
-    z-index: 2; /*not included in wpt*/
+    overflow-x: auto; 
+    z-index: 2; 
     }
 
 
@@ -220,6 +220,7 @@ label { font-weight:700;}
   top: 0px;
   left:0;
   right:0;
+  width:100%;
   height: 50px;	
   background: #444;
   color: white;
@@ -247,33 +248,34 @@ a.zoomer {
   top: 10px;
 }  
 .wax-tooltip {
-    left: 100px;
-    top: 10px; /*wpt: 330px*/
-    right: auto; /*unsure || wpt: 60px*/
-    }
+  left: 100px;
+  top: 10px; /*wpt: 330px*/
+  right: auto; /*unsure || wpt: 60px*/
+}
 .wax-legends { /*STYLE: make smaller, fonts included..*/
-    left: 10px;
-    right: auto; /*wpt: 330px*/
-    width: 290px;
-    }
+  left: 10px;
+  bottom: 10px;
+  right: auto;
+  width: 290px;
+}
 .wax-share h3 {
-    margin: 0px 0px 10px;
-    font-size: 16px;
-    font-weight: normal;
-    }
+  margin: 0px 0px 10px;
+  font-size: 16px;
+  font-weight: normal;
+}
 .wax-share strong {
-    font-weight: 700;
-    }
+  font-weight: 700;
+}
 .wax-share small {
     font-size: 11px;
     color: #999;
     display: block;
     margin-top: 0.5em;
-    }
+}
 .share {
     top: 45px;
     z-index: 1000;
-    }
+}
     
 .mmg-default {
     width: 20px;
