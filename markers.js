@@ -11,9 +11,10 @@ mapbox.converters.googledocs('0B4nlwc2QbtjtMS01YWYwNGYyOC03ZmY0LTQ2YzMtODJmYS0zM
     // event handler and run manually.
     function click_year(y) {
         return function() {
-            var active = document.getElementsByClassName('year-active');
+            var active = document.getElementsByClassName('start_year');
+            //make it work for start_year through start_year+num_months/12 (round up)
             if (active.length) active[0].className = '';
-            document.getElementById('y' + y).className = 'year-active';
+            document.getElementById('y' + y).className = 'start_year';
             markerLayer.filter(function(f) {
                 return f.properties.year == y;
             });
