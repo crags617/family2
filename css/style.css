@@ -236,13 +236,13 @@ a.zoomer {
     }
     
 .wax-tooltip {
-    left: auto;
+    left: 100px;
     top: 10px; /*wpt: 330px*/
-    right: 10px; /*wpt: 60px*/
+    right: auto; /*unsure || wpt: 60px*/
     }
-.wax-legends {
-    left: auto;
-    right: 10px; /*wpt: 330px*/
+.wax-legends { /*STYLE: make smaller, fonts included..*/
+    left: 10px;
+    right: auto; /*wpt: 330px*/
     width: 290px;
     }
 .wax-share h3 {
@@ -381,10 +381,10 @@ a.zoomer {
     }
 .embed .wax-tooltip {
     top: 10px;
-    right: 10px;
+    left: 50px;
     }
 .embed .wax-legends {
-    right: 10px;
+    left: 10px;
     }
 .embed .share {
     top: 45px;
