@@ -121,12 +121,7 @@ a.year-active {
     z-index: 0;
     height: 100%;
     width: 100%;
-    /*from wpt:
-    top:0;
-  	right:0;
-  	bottom:0;
-  	left:0;*/
-    }
+}
 
 #header {
     position: absolute;
@@ -152,8 +147,6 @@ a.year-active {
     z-index: 2; 
     }
 
-
-    
 /*TABLE STYLES from ltt: mayneed
 th {
     padding: 10px 0;
@@ -206,13 +199,14 @@ LAYERS STYLES FROM WPT: mayneed
 .heroine header {
   position: absolute;
   top: 0px;
-  left:0;
-  right:0;
-  width:100%;
+  left:0px;
+  right:0px;
+  width:auto;
   height: 50px;	
   background: #444;
   color: white;
 }
+
 .heroine .map {
   top:50px;
   bottom:auto;
