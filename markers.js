@@ -2,14 +2,14 @@ markerLayer = mapbox.markers.layer()
 // this is a quick optimization - otherwise all markers are briefly displayed
 // before filtering to 2001
 	.filter(function() { return false })
-	.url('https://docs.google.com/open?id=0B4nlwc2QbtjtMS01YWYwNGYyOC03ZmY0LTQ2YzMtODJmYS0zMDIzZDEwYjFlY2U', function(err, features) {
-/* if that url doesn't work:
+  	.id('homes_solo', function(features) {
+/*	.url('https://docs.google.com/open?id=0B4nlwc2QbtjtMS01YWYwNGYyOC03ZmY0LTQ2YzMtODJmYS0zMDIzZDEwYjFlY2U', function(err, features) {
+// if that url doesn't work:
 mapbox.converters.googledocs('0B4nlwc2QbtjtMS01YWYwNGYyOC03ZmY0LTQ2YzMtODJmYS0zMDIzZDEwYjFlY2U', 'od6', function(features) {
 */
-    // A closure for clicking years. You give it a year, and it returns a function
-    // that, when run, clicks that year. It's this way in order to be used as both an
-    // event handler and run manually.
-    function click_year(y) {
+
+  
+    function click_year(y) { 
         return function() {
             var active = document.getElementsByClassName('start_year');
             //make it work for start_year through start_year+num_months/12 (round up)
